@@ -38,7 +38,11 @@ This repository is intended for **portfolio/demo purposes only** and cannot be c
 ---
 
 ## 📸 Screenshots
-_Add your project screenshots here to show your UI and features visually._
+<img width="1848" height="865" alt="Home Page" src="https://github.com/user-attachments/assets/9be32707-87ee-4661-847c-7cb3bda2569f" />
+<img width="1736" height="851" alt="Admin Login Page" src="https://github.com/user-attachments/assets/39508461-cc8b-4625-bdf8-4e5cc6ca097d" />
+<img width="1870" height="862" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/f72da2a4-bf64-442d-8be2-4bcffff62b37" />
+<img width="1865" height="861" alt="Project Page" src="https://github.com/user-attachments/assets/1a01eb98-6cf1-4cba-a73f-a77f96f16d06" />
+<img width="1872" height="857" alt="Add Project page" src="https://github.com/user-attachments/assets/e1e0e881-a003-4899-936d-4f2ee947e32d" />
 
 ---
 
