@@ -1,0 +1,389 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #1F2937;
+    background-color: #F3F4F6;
+    overflow-x: hidden;
+  }
+
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    letter-spacing: -0.0125em;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.0125em;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.875rem;
+    }
+  }
+
+  p {
+    line-height: 1.625;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .container-custom {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    background-color: #2563EB;
+    color: #1F2937;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background-color: #1D4ED8;
+  }
+
+  .btn-outline {
+    padding: 0.75rem 2rem;
+    border: 1px solid #1F2937;
+    color: #1F2937;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background-color: #1F2937;
+    color: #FFFFFF;
+  }
+
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+    letter-spacing: -0.0125em;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    width: 6rem;
+    height: 0.125rem;
+    background-color: #2563EB;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+
+  .heading-line {
+    position: relative;
+  }
+
+  .heading-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    width: 5rem;
+    height: 0.125rem;
+    background-color: #2563EB;
+  }
+
+  .image-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-hover img {
+    transition: transform 0.7s ease-in-out;
+  }
+
+  .image-hover:hover img {
+    transform: scale(1.1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #2563EB, #1D4ED8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hover-link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .hover-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #2563EB;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .hover-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.8s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Define CSS variables at the root level */
+:root {
+  --primary-color: #2B2D42; /* Deep Charcoal Gray */
+  --accent-color: #D4A017;  /* Warm Gold */
+  --secondary-bg: #F5F5F5;  /* Soft Off-White */
+  --text-primary: #333333;  /* Dark Slate */
+  --text-light: #FFFFFF;    /* Pure White */
+  --neutral-border: #E5E7EB; /* Light Gray */
+}
+
+/* Use CSS variables for colors */
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+.hover\:border-accent:hover {
+  border-color: var(--accent-color);
+}
+
+.hover\:text-accent:hover {
+  color: var(--accent-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+.btn-outline {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.bg-neutral-100 {
+  background-color: var(--secondary-bg);
+}
+
+.text-secondary {
+  color: var(--text-primary);
+}
+
+.border-neutral-200 {
+  border-color: var(--neutral-border);
+}
+
+.text-dark {
+  color: var(--text-primary);
+}
+
+/* Use Roboto as the default font */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Add more styles as needed */

@@ -1,0 +1,24 @@
+# Login API Test
+POST https://api.architectshahab.site/api/admin/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "password123"
+}
+
+###
+# Get Projects API Test
+GET https://api.architectshahab.site/api/projects
+Authorization: Bearer your-jwt-token
+
+###
+# Create Project API Test
+POST https://api.architectshahab.site/api/projects
+Content-Type: application/json
+Authorization: Bearer your-jwt-token
+
+{
+    "title": "Test Project",
+    "description": "This is a test project"
+}

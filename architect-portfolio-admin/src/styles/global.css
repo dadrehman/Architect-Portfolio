@@ -1,0 +1,171 @@
+/* src/styles/global.css */
+
+/* Reset some browser defaults and set base styles */
+html, body {
+  @apply font-sans antialiased text-gray-900 text-base;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-medium leading-tight;
+}
+
+h1 {
+  @apply text-2xl md:text-3xl;
+}
+
+h2 {
+  @apply text-xl md:text-2xl;
+}
+
+h3 {
+  @apply text-lg md:text-xl;
+}
+
+/* Link styles */
+a {
+  @apply text-primary-600 hover:text-primary-700 transition-colors;
+}
+
+/* Toast notifications customization */
+.Toastify__toast {
+  @apply rounded-md shadow-md;
+}
+
+.Toastify__toast-body {
+  @apply font-medium;
+}
+
+.Toastify__progress-bar {
+  @apply bg-primary-500;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* Utility classes */
+.text-overflow-ellipsis {
+  @apply overflow-hidden whitespace-nowrap text-ellipsis;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Image placeholders */
+.img-placeholder {
+  @apply bg-gray-200 flex items-center justify-center text-gray-400;
+}
+
+/* Custom table styles */
+.custom-table {
+  @apply w-full;
+}
+
+.custom-table th {
+  @apply py-3 px-4 text-left font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-b border-gray-200;
+}
+
+.custom-table td {
+  @apply py-3 px-4 border-b border-gray-200;
+}
+
+.custom-table tr:hover {
+  @apply bg-gray-50;
+}
+
+/* Form element focus state */
+.input-field:focus, 
+.textarea-field:focus, 
+.select-field:focus {
+  @apply border-primary-500 ring-2 ring-primary-500 ring-opacity-20;
+}
+
+/* Buttons hover effect */
+.btn {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn::after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn:hover::after {
+  @apply opacity-10;
+}
+
+.btn:active::after {
+  @apply opacity-20;
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 640px) {
+  .main-content {
+    @apply px-4 py-4;
+  }
+}
+
+/* Fix for z-index issues with elements */
+.dropdown {
+  @apply z-10;
+}
+
+.modal {
+  @apply z-50;
+}
+
+.toast {
+  @apply z-50;
+}
+
+/* Helper classes for spacing */
+.mt-section {
+  @apply mt-8;
+}
+
+.mb-section {
+  @apply mb-8;
+}
+
+/* Custom loader dots */
+.loading-dots {
+  @apply inline-flex items-center;
+}
+
+.loading-dots span {
+  @apply w-1 h-1 bg-current rounded-full mx-0.5 animate-pulse;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Custom file input */
+input[type="file"] {
+  @apply cursor-pointer;
+}

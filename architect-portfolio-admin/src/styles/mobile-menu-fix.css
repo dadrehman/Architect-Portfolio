@@ -1,0 +1,100 @@
+/* src/styles/mobile-menu-fix.css */
+
+/* Force hardware acceleration for smoother transitions */
+.sidebar-transition {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Prevent flickering on transition */
+.mobile-menu {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Smooth animation for mobile menu */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+/* Overlay animation */
+.overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.overlay.open {
+  opacity: 1;
+}
+
+/* Fix for mobile Safari/iOS */
+@supports (-webkit-touch-callout: none) {
+  .sidebar-transition {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .mobile-menu {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Fix for high refresh rate screens */
+@media (prefers-reduced-motion: no-preference) {
+  .sidebar-transition {
+    transition-duration: 0.25s !important;
+  }
+}
+
+/* Specific fixes for mobile menu toggle button */
+.toggle-button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  outline: none;
+}
+
+/* Add more visible feedback for mobile */
+.toggle-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Prevent blinking by ensuring z-index and visibility */
+.overlay {
+  z-index: 20;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.open {
+  visibility: visible;
+}
+
+/* Ensure sidebar doesn't cause layout shifts */
+.sidebar {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: transform 0.3s ease-in-out;
+}

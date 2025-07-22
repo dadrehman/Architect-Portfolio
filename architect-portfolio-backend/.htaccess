@@ -1,0 +1,31 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle API requests for backend (api.architectshahab.site)
+RewriteCond %{HTTP_HOST} ^api\.architectshahab\.site$ [NC]
+RewriteCond %{REQUEST_URI} ^/api [NC]
+RewriteRule ^api/(.*)$ http://127.0.0.1:3000/api/$1 [P,L]
+
+# Serve admin panel (admin.architectshahab.site)
+RewriteCond %{HTTP_HOST} ^admin\.architectshahab\.site$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /admin/index.html [L]
+
+# Serve user panel (architectshahab.site)
+RewriteCond %{HTTP_HOST} ^architectshahab\.site$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
+
+# Add CORS headers for API (optional, if needed)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "https://architectshahab.site"
+    Header set Access-Control-Allow-Origin "https://admin.architectshahab.site"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>

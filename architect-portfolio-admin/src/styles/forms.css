@@ -1,0 +1,195 @@
+/* src/styles/forms.css */
+
+/* Form Inputs */
+.input-field {
+  @apply w-full rounded-md border-gray-300 shadow-sm px-4 py-3 
+  bg-white border focus:border-primary-500 focus:ring-2 
+  focus:ring-primary-500 focus:ring-opacity-50 transition duration-200 
+  ease-in-out text-gray-900;
+}
+
+.input-field:hover {
+  @apply border-gray-400;
+}
+
+.input-field:disabled {
+  @apply bg-gray-100 cursor-not-allowed text-gray-500;
+}
+
+/* Textarea */
+textarea.input-field {
+  @apply min-h-[100px] resize-y;
+}
+
+/* Select boxes */
+select.input-field {
+  @apply pr-10 appearance-none bg-no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+}
+
+/* Checkbox & radio */
+.checkbox-field, .radio-field {
+  @apply h-5 w-5 text-primary-600 focus:ring-primary-500 rounded cursor-pointer
+  border-gray-300 transition duration-200 ease-in-out;
+}
+
+/* Form label */
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Form group */
+.form-group {
+  @apply mb-4;
+}
+
+/* Error message */
+.error-message {
+  @apply mt-1 text-sm text-red-600;
+}
+
+/* Form control with icon prefix */
+.input-icon-wrapper {
+  @apply relative;
+}
+
+.input-icon-wrapper .input-field {
+  @apply pl-10;
+}
+
+.input-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+/* Form sections */
+.form-section {
+  @apply mb-8 pb-6 border-b border-gray-200;
+}
+
+.form-section:last-child {
+  @apply border-0 pb-0 mb-0;
+}
+
+.form-section-title {
+  @apply text-lg font-medium text-gray-900 mb-4;
+}
+
+/* Form actions */
+.form-actions {
+  @apply flex justify-end space-x-3 mt-6;
+}
+
+/* File upload */
+.file-upload {
+  @apply relative border-2 border-dashed border-gray-300 rounded-md p-6 
+  flex flex-col items-center justify-center hover:border-primary-500 transition-colors
+  cursor-pointer bg-gray-50 text-center;
+}
+
+.file-upload input[type="file"] {
+  @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
+}
+
+.file-upload-icon {
+  @apply h-12 w-12 text-gray-400 mb-2;
+}
+
+.file-preview {
+  @apply relative mt-3 rounded-md overflow-hidden;
+}
+
+.file-preview-remove {
+  @apply absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full 
+  hover:bg-red-700 transition-colors shadow-md;
+}
+
+/* Color selection */
+.color-field-wrapper {
+  @apply flex rounded-md overflow-hidden;
+}
+
+.color-preview {
+  @apply w-10 h-10 border border-gray-300 border-r-0 rounded-l-md;
+}
+
+.color-field {
+  @apply input-field rounded-l-none;
+}
+
+/* Rating input */
+.rating-input {
+  @apply flex items-center space-x-1;
+}
+
+.rating-star {
+  @apply text-2xl cursor-pointer transition-colors;
+}
+
+.rating-star-filled {
+  @apply text-yellow-500;
+}
+
+.rating-star-empty {
+  @apply text-gray-300;
+}
+
+/* Enhanced switch */
+.switch {
+  @apply relative inline-flex items-center cursor-pointer;
+}
+
+.switch-input {
+  @apply sr-only;
+}
+
+.switch-label {
+  @apply ml-3 text-sm font-medium text-gray-700;
+}
+
+.switch-slider {
+  @apply w-11 h-6 bg-gray-200 rounded-full 
+  after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+  after:bg-white after:border-gray-300 after:border after:rounded-full
+  after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600
+  peer-checked:after:translate-x-full peer-focus:outline-none
+  peer-focus:ring-2 peer-focus:ring-primary-500 peer-focus:ring-opacity-50;
+}
+
+/* Form layout utilities */
+.form-row {
+  @apply flex flex-wrap -mx-2;
+}
+
+.form-col {
+  @apply px-2;
+}
+
+.form-col-full {
+  @apply w-full;
+}
+
+.form-col-1\/2 {
+  @apply w-full md:w-1/2;
+}
+
+.form-col-1\/3 {
+  @apply w-full md:w-1/3;
+}
+
+.form-col-2\/3 {
+  @apply w-full md:w-2/3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .form-actions {
+    @apply flex-col space-y-3 space-x-0;
+  }
+  
+  .form-actions button, 
+  .form-actions a {
+    @apply w-full;
+  }
+}

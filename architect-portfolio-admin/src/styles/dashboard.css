@@ -1,0 +1,357 @@
+/* src/styles/dashboard.css */
+
+/* Dashboard layout */
+.dashboard-container {
+  @apply min-h-screen flex;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply w-64 bg-secondary-800 text-white p-6 fixed h-full z-10;
+}
+
+.sidebar-header {
+  @apply mb-8;
+}
+
+.sidebar-logo {
+  @apply text-2xl font-display font-semibold;
+}
+
+.sidebar-subtitle {
+  @apply text-secondary-400 text-sm;
+}
+
+/* Sidebar navigation */
+.sidebar-nav {
+  @apply space-y-2;
+}
+
+.nav-item {
+  @apply flex items-center p-3 rounded hover:bg-secondary-700 transition-colors;
+}
+
+.nav-item-active {
+  @apply bg-secondary-700;
+}
+
+.nav-icon {
+  @apply mr-3 text-lg;
+}
+
+/* Main content area */
+.main-content {
+  @apply flex-1 p-8 bg-gray-100 ml-64;
+}
+
+.page-header {
+  @apply mb-6;
+}
+
+.page-title {
+  @apply text-2xl font-display font-medium text-secondary-800;
+}
+
+.page-subtitle {
+  @apply text-secondary-500;
+}
+
+/* src/styles/dashboard.css (continued) */
+
+/* Cards */
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-100;
+}
+
+.card-header {
+  @apply border-b border-gray-200 px-6 py-4;
+}
+
+.card-title {
+  @apply text-lg font-medium text-secondary-800;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply border-t border-gray-200 px-6 py-4 bg-gray-50;
+}
+
+/* Stat cards */
+.stat-card {
+  @apply h-full hover:shadow-lg transition-shadow duration-200;
+}
+
+.stat-card-inner {
+  @apply flex items-center;
+}
+
+.stat-icon {
+  @apply p-3 rounded-full text-white mr-4;
+}
+
+.stat-content p:first-child {
+  @apply text-sm text-secondary-500;
+}
+
+.stat-content p:last-child {
+  @apply text-2xl font-semibold;
+}
+
+/* Data tables */
+.data-table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.data-table thead {
+  @apply bg-gray-50;
+}
+
+.data-table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.data-table td {
+  @apply px-6 py-4 whitespace-nowrap;
+}
+
+.data-table tr {
+  @apply hover:bg-gray-50;
+}
+
+.data-table tbody {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+/* Empty states */
+.empty-state {
+  @apply py-12 text-center;
+}
+
+.empty-state-icon {
+  @apply text-gray-400 text-5xl mb-4 mx-auto;
+}
+
+.empty-state-text {
+  @apply text-secondary-500 mb-6;
+}
+
+/* Loading indicators */
+.loading-spinner {
+  @apply flex justify-center py-12;
+}
+
+.spinner {
+  @apply animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-600;
+}
+
+/* Alerts and notifications */
+.alert {
+  @apply p-4 rounded-md mb-6 border;
+}
+
+.alert-success {
+  @apply bg-green-50 border-green-200 text-green-800;
+}
+
+.alert-info {
+  @apply bg-blue-50 border-blue-200 text-blue-800;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+}
+
+.alert-danger {
+  @apply bg-red-50 border-red-200 text-red-800;
+}
+
+/* Badges */
+.badge {
+  @apply px-2 inline-flex text-xs leading-5 font-semibold rounded-full;
+}
+
+.badge-primary {
+  @apply bg-primary-100 text-primary-800;
+}
+
+.badge-secondary {
+  @apply bg-secondary-100 text-secondary-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Status indicators */
+.status-dot {
+  @apply h-3 w-3 rounded-full inline-block mr-2;
+}
+
+.status-active {
+  @apply bg-green-500;
+}
+
+.status-pending {
+  @apply bg-yellow-500;
+}
+
+.status-inactive {
+  @apply bg-red-500;
+}
+
+/* Image thumbnails */
+.thumbnail {
+  @apply h-10 w-10 rounded-md object-cover border border-gray-200;
+}
+
+.thumbnail-circle {
+  @apply h-10 w-10 rounded-full object-cover border border-gray-200;
+}
+
+.thumbnail-placeholder {
+  @apply h-10 w-10 rounded-md bg-gray-200 flex items-center justify-center text-gray-400;
+}
+
+.thumbnail-placeholder-circle {
+  @apply h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400;
+}
+
+/* Action buttons */
+.action-buttons {
+  @apply flex space-x-2;
+}
+
+.action-button {
+  @apply p-1 rounded-full transition-colors;
+}
+
+.action-edit {
+  @apply text-blue-600 hover:text-blue-900;
+}
+
+.action-delete {
+  @apply text-red-600 hover:text-red-900;
+}
+
+.action-view {
+  @apply text-green-600 hover:text-green-900;
+}
+
+.action-toggle {
+  @apply text-yellow-500 hover:text-yellow-600;
+}
+
+/* File/image uploading */
+.upload-area {
+  @apply border-2 border-dashed border-gray-300 rounded-md 
+  flex flex-col items-center justify-center p-6 
+  transition-colors cursor-pointer hover:border-primary-500;
+}
+
+.upload-area-active {
+  @apply border-primary-500 bg-primary-50;
+}
+
+.upload-icon {
+  @apply text-gray-400 text-4xl mb-2;
+}
+
+.upload-text {
+  @apply text-sm text-gray-500 text-center;
+}
+
+.file-preview-grid {
+  @apply grid grid-cols-2 gap-2 mb-4;
+}
+
+.file-preview-item {
+  @apply relative;
+}
+
+.file-preview-image {
+  @apply w-full h-24 object-cover rounded-md;
+}
+
+.file-remove-button {
+  @apply absolute top-1 right-1 bg-red-600 text-white p-1 
+  rounded-full hover:bg-red-700 shadow-md;
+}
+
+/* Responsive sidebar */
+@media (max-width: 1024px) {
+  .sidebar {
+    @apply w-20 p-4;
+  }
+  
+  .sidebar-header, .sidebar-subtitle, .nav-text {
+    @apply hidden;
+  }
+  
+  .nav-item {
+    @apply justify-center;
+  }
+  
+  .nav-icon {
+    @apply mr-0 text-xl;
+  }
+  
+  .main-content {
+    @apply ml-20;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    @apply fixed bottom-0 w-full h-16 p-0 flex justify-around items-center;
+  }
+  
+  .sidebar-header {
+    @apply hidden;
+  }
+  
+  .sidebar-nav {
+    @apply flex space-y-0 w-full space-x-1;
+  }
+  
+  .nav-item {
+    @apply flex-1 flex-col text-xs p-2;
+  }
+  
+  .nav-icon {
+    @apply mb-1;
+  }
+  
+  .nav-text {
+    @apply block text-xs;
+  }
+  
+  .main-content {
+    @apply ml-0 pb-16;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
